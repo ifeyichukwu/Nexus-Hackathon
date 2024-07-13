@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <div style="background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 800px; text-align: center;">
+        <h1>Welcome, <span id="teacherName"></span></h1>
+        <div id="coursesContainer" style="display: flex; flex-direction: column; gap: 15px;"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const teacherName = localStorage.getItem('teacherName');
+            document.getElementById('teacherName').textContent = teacherName;
+
+            fetch('/getCourses', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ teacherName })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const coursesContainer = document.getElementById('coursesContainer');
+                data.courses.forEach(course => {
+                    const courseBox = document.createElement('div');
+                    courseBox.style.backgroundColor = '#e9ecef';
+                    courseBox.style.padding = '15px';
+                    courseBox.style.borderRadius = '5px';
+                    courseBox.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+                    courseBox.style.display = 'flex';
+                    courseBox.style.flexDirection = 'column';
+                    courseBox.style.alignItems = 'flex-start';
+
+                    const courseTitle = document.createElement('h2');
+                    courseTitle.textContent = course.name;
+                    courseTitle.style.margin = '0 0 10px 0';
+                    courseTitle.style.fontSize = '18px';
+                    courseTitle.style.color = '#333';
+                    courseBox.appendChild(courseTitle);
+
+                    const courseTime = document.createElement('p');
+                    courseTime.textContent = `Time: ${course.time}`;
+                    courseTime.style.margin = '5px 0';
+                    courseTime.style.color = '#666';
+                    courseBox.appendChild(courseTime);
+
+                    const courseDay = document.createElement('p');
+                    courseDay.textContent = `Day: ${course.day}`;
+                    courseDay.style.margin = '5px 0';
+                    courseDay.style.color = '#666';
+                    courseBox.appendChild(courseDay);
+
+                    const buttonsContainer = document.createElement('div');
+                    buttonsContainer.style.display = 'flex';
+                    buttonsContainer.style.gap = '10px';
+
+                    const turnOnButton = document.createElement('button');
+                    turnOnButton.textContent = 'Turn on Power Supply';
+                    turnOnButton.style.padding = '10px 15px';
+                    turnOnButton.style.backgroundColor = '#28a745';
+                    turnOnButton.style.color = '#fff';
+                    turnOnButton.style.border = 'none';
+                    turnOnButton.style.borderRadius = '3px';
+                    turnOnButton.style.cursor = 'pointer';
+                    turnOnButton.addEventListener('click', function() {
+                        fetch('/turnOnPower', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ teacherName, courseName: course.name })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            const powerMessage = document.createElement('div');
+                            powerMessage.textContent = data.message;
+                            powerMessage.style.color = data.success ? 'green' : 'red';
+                            courseBox.appendChild(powerMessage);
+                        });
+                    });
+                    buttonsContainer.appendChild(turnOnButton);
+
+                    const turnOffButton = document.createElement('button');
+                    turnOffButton.textContent = 'Turn off Power Supply';
+                    turnOffButton.style.padding = '10px 15px';
+                    turnOffButton.style.backgroundColor = '#dc3545';
+                    turnOffButton.style.color = '#fff';
+                    turnOffButton.style.border = 'none';
+                    turnOffButton.style.borderRadius = '3px';
+                    turnOffButton.style.cursor = 'pointer';
+                    turnOffButton.addEventListener('click', function() {
+                        fetch('/turnOffPower', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ teacherName, courseName: course.name })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            const powerMessage = document.createElement('div');
+                            powerMessage.textContent = data.message;
+                            powerMessage.style.color = data.success ? 'green' : 'red';
+                            courseBox.appendChild(powerMessage);
+                        });
+                    });
+                    buttonsContainer.appendChild(turnOffButton);
+
+                    courseBox.appendChild(buttonsContainer);
+                    coursesContainer.appendChild(courseBox);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
