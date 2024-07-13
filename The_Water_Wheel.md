@@ -50,8 +50,13 @@ Remember to turn off the power supply when done.
 
 
 ##Future Development Plan
-FUTURE PLANS FOR DEVELOPMENT: DEVELOPING A SOFTWARE SYSTEM THAT USES REAL-TIME DATA TO OPTIMIZE THE OPERATION OF THE WATER WHEEL HYDRO-POWER ELECTRICITY GENERATION? THE SOFTWARE IS DESIGNED TO MONITOR THE WATER FLOW, TURBINE SPEED, AND POWER OUTPUT, AND MAKE ADJUSTMENTS TO MAXIMIZE EFFICIENCY AND OUTPUT. ADDITIONALLY, THE SOFTWARE COULD INCORPORATE PREDICTIVE ANALYTICS TO ANTICIPATE MAINTENANCE NEEDS AND MINIMIZE DOWNTIME. THIS WOULD HELP ENSURE THAT THE HYDRO-POWER SYSTEM OPERATES AT PEAK PERFORMANCE AND PROVIDE A RELIABLE SOURCE OF ELECTRICITY.IN THE SYSTEM, AS THE OCEAN IS NOT AN EASY PLACE TO MAINTAIN ROUTINE CHECKS FREQUENTLY.
-THE OPTIMAL TIMING IS CRUCIAL FOR MAKING THE RIGHT DECISIONS. INTEGRATED SMART TECHNOLOGY PLAYS A SIGNIFICANT ROLE IN PROVIDING TIMELY ASSISTANCE TO SYSTEM USERS. THIS ENSURES THAT RESOURCES ARE UTILIZED WHEN THEY ARE MOST NEEDED. FOR INSTANCE, IN THE EVENT OF POWER SHORTAGES, THE INTEGRATED AI CAN DETERMINE THE IDEAL TIMING FOR UTILIZING AVAILABLE ELECTRICITY. IT ALSO FACILITATES REGULAR CHECKS ON FAULTY SYSTEM COMPONENTS TO ENSURE SMOOTH OPERATIONS.
+In the future, I plan to develop a software system that will use real-time data to optimize the operation of our water wheel hydropower electricity generation. This software will monitor the water flow, turbine speed, and power output in order to make adjustments that maximize efficiency and output. 
+Additionally, the software could incorporate predictive analytics to anticipate maintenance needs and minimize downtime. This will ensure that the hydropower system operates at peak performance and provides a reliable source of electricity. 
+The system will also use databases to check on which hostels are on internships (i.e., 400 level students) and prevent power from being wasted in their apartments. (Technology stack: MySQL and python)
 It also uses Databases to check on which hostels are on Internships i.e 400L and prevents power from wasting to their apartments. (Technology stack: MySQL and python)
 
+Find below a link to the Presentation Package in .pptx
+https://docs.google.com/presentation/d/1cqksjaLGQMmD5g-2fYnV3aHxsHeNYZ_c/edit?usp=sharing&ouid=115494278096759273665&rtpof=true&sd=true
+
+Find below the link to the deployed project
 
