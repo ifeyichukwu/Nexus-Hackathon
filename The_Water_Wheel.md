@@ -44,7 +44,13 @@ Purpose: Provide an easy way to deploy your web application, making it accessibl
 Open the app.js file using nodejs to run it on your local terminal.
 cd to the teacher-app/ by typing "cd teacher-app" and run the app by typing "node app.js" in the terminal
 On the landing page, fill in the teacher's or instructor's sign in details i.e Username, password, Accesskey.
-You would be taken to another page, and there for the teacher's authority, yo can turn on the power supply for the hall venueor practical lab to be used.
+
+Use the following details to sign in:
+Username: Adedoyin Mary, Eng Folorunsho, Dr. Adedeji, Prof. Oyedeko, Engr Joseph
+Password: adedoyin310, folorunsho210, adedeji212, oyedeko101, joseph592
+Accesskey: 2801, 2207, 1101, 3501, 3801
+
+You would be taken to another page, and there for the teacher's authority, you can turn on the power supply for the hall venue or practical lab to be used.
 Remember to turn off the power supply when done.
 
 
@@ -59,4 +65,9 @@ Find below a link to the Presentation Package in .pptx
 https://docs.google.com/presentation/d/1cqksjaLGQMmD5g-2fYnV3aHxsHeNYZ_c/edit?usp=sharing&ouid=115494278096759273665&rtpof=true&sd=true
 
 Find below the link to the deployed project
+
+Use the following details to sign in:
+Username: Adedoyin Mary, Eng Folorunsho, Dr. Adedeji, Prof. Oyedeko, Engr Joseph
+Password: adedoyin310, folorunsho210, adedeji212, oyedeko101, joseph592
+Accesskey: 2801, 2207, 1101, 3501, 3801
 
